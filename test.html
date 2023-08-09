@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Capturar Firmas</title>
+  <script src="https://unpkg.com/signature_pad"></script>
+  <style>
+    #signature-pad-1,
+    #signature-pad-2 {
+      border: 1px solid #ccc;
+      width: 300px;
+      height: 200px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+    <form method="post" action="pdf.php">
+        <div class="sigPad">
+          <canvas class="pad" width="198" height="55"></canvas>
+          <input type="hidden" name="output1" class="output" />
+        </div>
+        <div class="sigPad">
+          <canvas class="pad" width="198" height="55"></canvas>
+          <input type="hidden" name="output2" class="output" />
+        </div>
+        <button type="submit">I accept the terms of this agreement.</button>
+      </form>
+      <script>
+        $( document ).ready( function ( ) {
+          $('.sigPad').signaturePad( );
+        } );
+        $( 'form' ).submit( function ( evt ) {
+          $( '.sigPad' ).each( function ( idx , el ) {
+            $( this ).find( '.output' ).val( $( this ).signaturePad( ).getSignatureImage( ) );
+          } );
+        } );  
+      </script>
+</body>
+</html>
