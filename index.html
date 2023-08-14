@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FORIS</title>
+    <link rel="shortcut icon" href="./logos/SNR.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <script src="jspdf.min.js"></script>
@@ -14,24 +15,45 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
     <script src="app.js"></script>
 </head>
-
+<style>
+    footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+     
+        .rights {
+            margin-top: 10px;
+            font-size: 12px;
+        }
+</style>
 <body>
+    <header>
+        <nav class="navbar navbar-light" style="background-color: #eaeaeb;">
+            <div class="d-flex justify-content-center">
+                <div>
+                    <img src="./logos/SNR.png">
+                </div>
+                <div style="margin-top: 35px;">
+                    <h3>Formato para registro de incidentes o solicitudes (pasillo)</h3>
+                </div>
+                <div>
+                    <img src="./logos/SNR2.png">
+                </div>
+            </div>
+        </nav>
+    </header>
     <div class="container mt-4">
         <div class="row">
             <div class="col-md-8 offset-md-2">
-                <h3>Formato para registro de incidentes o solicitudes (pasillo)</h3>
                 <hr>
                 <form id="form">
-                    <div class="mb-3">
-                        <h3>INFORMACION DEL TECNICO</h3>
-                        <label for="nombre" class="form-label">Nombre del Tecnico</label>
-                        <input type="text" class="form-control" id="nombreTec">
-                    </div>
                     <div class="row mb-3">
-                        <h3>INFORMACION DEL SERVICIO</h3>
+                        <h3>INFORMACION DEL TECNICO</h3>
                         <div class="col-md-6">
-                            <label for="nombre" class="form-label">Nombre del Usuario</label>
-                            <input type="text" class="form-control" id="nombreU">
+                            <label for="nombre" class="form-label">Nombre del Tecnico</label>
+                            <input type="text" class="form-control" id="nombreTec">
                         </div>
                         <div class="col-md-6">
                             <label for="nombre" class="form-label">Fecha de atencion</label>
@@ -44,10 +66,14 @@
                                 </select>
                         </div>
                     </div>
-
-                    <div class="row mb-6">
-                        <div class="col-mb-6">
-                            <label for="dependencia" class="form-label">Dependencia</label>
+                    <div class="row mb-3">
+                        <h3>INFORMACION DEL USUARIO</h3>
+                        <div class="col-md-6">
+                            <label for="direccion" class="form-label">Nombre del usuario</label>
+                            <input type="text" class="form-control" id="nombreU">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="telefono" class="form-label">Dependencia</label>
                             <input type="text" class="form-control" id="dependencia">
                         </div>
                     </div>
@@ -84,6 +110,11 @@
             </div>
         </div>
     </div> 
+    <br><br><br><br><br><br>
+    <footer>
+        <p>&copy; 2023 Gabriel Miranda. Todos los derechos reservados.</p>
+        <p class="rights">Se prohíbe la reproducción total o parcial sin autorización.</p>
+    </footer>
 </body>
 
 </html>
