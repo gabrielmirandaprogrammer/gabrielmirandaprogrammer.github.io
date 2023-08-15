@@ -62,22 +62,22 @@ async function generatePDF(nombreTec, nombreU, fecha, tipoServicio, dependencia,
     var splitDetalle = pdf.splitTextToSize(detalle, 420)
 
     pdf.addImage(image, 'PNG', 0, 0, 530, 792);
-    pdf.addImage(signatureImage1, 'PNG', 300, 600, 170, 70);
-   pdf.addImage(signatureImage2, 'PNG', 50, 600, 170, 70);
+    pdf.addImage(signatureImage1, 'PNG', 300, 650, 170, 70);
+   pdf.addImage(signatureImage2, 'PNG', 50, 650, 170, 70);
    pdf.setFontSize(12);
    pdf.setFontSize(10);
-   pdf.text(nombreTec, 175, 190);
-   pdf.text(nombreU, 177, 287);
-   pdf.text(fecha, 150, 134);
-   pdf.text(tipoServicio, 165, 266);
-   pdf.text(dependencia, 177, 299);
-   pdf.text(ticket, 177, 313);
-   pdf.text(placa, 177, 328);
-   pdf.text(splitDetalle, 178, 360);
+   pdf.text(nombreTec, 175, 230);
+   pdf.text(nombreU, 177, 329);
+   pdf.text(fecha, 140, 176);
+   pdf.text(tipoServicio, 165, 308);
+   pdf.text(dependencia, 177, 341);
+   pdf.text(ticket, 177, 355);
+   pdf.text(placa, 177, 370);
+   pdf.text(splitDetalle, 178, 402);
    pdf.setFillColor(0,0,0);
    
    
 
-    pdf.save(`${nombreU}_acta.pdf`);
+    pdf.save(`${nombreU}_Acta.pdf`);
 
    }
